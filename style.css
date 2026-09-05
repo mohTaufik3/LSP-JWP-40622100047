@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #14142b;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background bintang sederhana */
+.stars {
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent), radial-gradient(1.5px 1.5px at 90px 120px, #fff, transparent), radial-gradient(1px 1px at 160px 60px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 220px 180px, #fff, transparent), radial-gradient(1px 1px at 300px 40px, #fff, transparent), radial-gradient(1.5px 1.5px at 340px 220px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 380px 240px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.planner-card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.planner-header h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 16px;
+  color: #1a1a2e;
+}
+
+.header-bar {
+  background: #1e1e3f;
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.planner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.planner-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.planner-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #1e1e3f;
+  border-radius: 6px;
+  flex-shrink: 0;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.planner-checkbox:checked {
+  background: #1e1e3f;
+}
+
+.planner-checkbox:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.task-title {
+  flex: 1;
+  border-bottom: 2px dotted #ccc;
+  padding-bottom: 6px;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+
+.task-title.done {
+  color: #b0b0b0;
+  text-decoration: line-through;
+  text-decoration-style: dotted;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.planner-list li:hover .task-actions {
+  opacity: 1;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.task-actions button:hover {
+  color: #1e1e3f;
+}
+
+.edit-input {
+  flex: 1;
+  border: none;
+  border-bottom: 2px dotted #1e1e3f;
+  font-size: 14px;
+  padding-bottom: 6px;
+  outline: none;
+}
+
+.planner-add input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px dotted #ccc;
+  padding: 10px 0;
+  font-size: 14px;
+  outline: none;
+  color: #1a1a2e;
+  margin-top: 6px;
+}
+
+.planner-add input::placeholder {
+  color: #bbb;
+}
+
+.planner-notes {
+  margin-top: 24px;
+  border: 2px solid #1e1e3f;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.planner-notes label {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+
+.planner-notes textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  min-height: 60px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  outline: none;
+  margin-top: 6px;
+}
